@@ -1,0 +1,16 @@
+import pandas as pd
+df= pd.read_excel("new3.xlsx", "new3")
+df
+
+
+import pandas as pd
+
+def convert_people_cell(cell):
+    if cell == "n.a.":
+        return 'sam waltan'
+    return cell
+
+df= pd.read_excel("new3.xlsx", "new3" , converters={
+    'people': convert_people_cell
+})
+df
